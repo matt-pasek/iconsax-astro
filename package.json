@@ -1,0 +1,24 @@
+{
+  "name": "iconsax-astro",
+  "version": "1.0.0",
+  "description": "iconsax icon pack for Astro framework",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matt-pasek/iconsax-astro.git"
+  },
+  "keywords": [
+    "iconsax",
+    "iconpack",
+    "astro"
+  ],
+  "author": "matt-pasek",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/matt-pasek/iconsax-astro/issues"
+  },
+  "homepage": "https://github.com/matt-pasek/iconsax-astro#readme"
+}
