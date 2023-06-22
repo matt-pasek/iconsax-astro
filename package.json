@@ -2,11 +2,20 @@
   "name": "iconsax-astro",
   "version": "1.0.0",
   "description": "iconsax icon pack for Astro framework",
-  "main": "index.js",
+  "main": "build.js",
+  "type": "module",
+  "exports": {
+    ".": "./dist/index.ts",
+    "./*": "./dist/*.astro"
+  },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "pretty": "npx prettier --write .",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "build": "node build.js",
+    "release": "npm run build && npm publish --access public"
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"
@@ -20,7 +29,7 @@
     "iconpack",
     "astro"
   ],
-  "author": "matt-pasek",
+  "author": "Matthew Pasek <m_pasek@icloud.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/matt-pasek/iconsax-astro/issues"
