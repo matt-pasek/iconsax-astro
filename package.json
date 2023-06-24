@@ -9,7 +9,8 @@
     "./*": "./dist/*.astro"
   },
   "files": [
-    "dist"
+    "dist",
+    "types.d.ts"
   ],
   "scripts": {
     "pretty": "npx prettier --write .",
@@ -36,8 +37,13 @@
   },
   "homepage": "https://github.com/matt-pasek/iconsax-astro#readme",
   "devDependencies": {
+    "astro": "^2.7.0",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.2",
-    "prettier": "2.8.8"
+    "prettier": "2.8.8",
+    "svgo": "^3.0.2"
+  },
+  "peerDependencies": {
+    "astro": "*"
   }
 }

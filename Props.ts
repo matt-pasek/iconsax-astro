@@ -286,7 +286,20 @@ export interface HTMLAttributes extends AriaAttributes {
 }
 
 export interface Props extends HTMLAttributes {
-  style?: string;
-  color?: string;
+  fill?: string;
+  'fill-opacity'?: number | string;
+  'fill-rule'?: 'nonzero' | 'evenodd' | 'inherit';
+  height?: number | string;
   size?: number | string;
+  stroke?: string;
+  'stroke-dasharray'?: string | number;
+  'stroke-dashoffset'?: string | number;
+  'stroke-linecap'?: 'butt' | 'round' | 'square' | 'inherit';
+  'stroke-linejoin'?: 'miter' | 'round' | 'bevel' | 'inherit';
+  'stroke-miterlimit'?: number | string;
+  'stroke-opacity'?: number | string;
+  'stroke-width'?: number | string;
+  viewBox?: string;
+  width?: number | string;
+  type?: 'bold' | 'broken' | 'bulk' | 'linear' | 'outline' | 'twotone';
 }
