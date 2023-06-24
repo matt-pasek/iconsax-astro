@@ -1,6 +1,6 @@
 {
   "name": "iconsax-astro",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "iconsax icon pack for Astro framework",
   "main": "build.js",
   "type": "module",
@@ -28,7 +28,9 @@
   "keywords": [
     "iconsax",
     "iconpack",
-    "astro"
+    "astro",
+    "astro-components",
+    "astro-iconpack"
   ],
   "author": "Matthew Pasek <m_pasek@icloud.com>",
   "license": "MIT",
