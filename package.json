@@ -1,10 +1,25 @@
 {
   "name": "iconsax-astro",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "iconsax icon pack for Astro framework",
-  "main": "index.js",
+  "main": "build.js",
+  "type": "module",
+  "exports": {
+    ".": "./dist/index.ts",
+    "./*": "./dist/*.astro"
+  },
+  "files": [
+    "dist",
+    "types.d.ts"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "pretty": "npx prettier --write .",
+    "prepare": "husky install",
+    "build": "node build.js",
+    "release": "npm run build && npm publish --access public"
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
   },
   "repository": {
     "type": "git",
@@ -13,12 +28,24 @@
   "keywords": [
     "iconsax",
     "iconpack",
-    "astro"
+    "astro",
+    "astro-components",
+    "astro-iconpack"
   ],
-  "author": "matt-pasek",
+  "author": "Matthew Pasek <m_pasek@icloud.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/matt-pasek/iconsax-astro/issues"
   },
-  "homepage": "https://github.com/matt-pasek/iconsax-astro#readme"
+  "homepage": "https://github.com/matt-pasek/iconsax-astro#readme",
+  "devDependencies": {
+    "astro": "^2.7.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.2",
+    "prettier": "2.8.8",
+    "svgo": "^3.0.2"
+  },
+  "peerDependencies": {
+    "astro": "*"
+  }
 }
