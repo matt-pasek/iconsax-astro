@@ -9,13 +9,14 @@ export { Props } from './Props';
 let {
 	size,
 	title,
+	color,
 	width = size,
 	height = size,
 	type,
-	svg = '${svgColl[0][1]}',
+	fill = 'none',
+	stroke = 'none',
 	...props
 } = {
-	'fill': '#FFFFFF',
 	'fill-rule': 'evenodd',
 	'title': '${title}',
 	'viewBox': '0 0 24 24',
@@ -31,14 +32,35 @@ const styleDictionary = {
   'twotone': '${svgColl[5][1]}'
 }
 
-const toAttributeSize = (size: number) => String(size).replace(/(?<=[0-9])x$/, 'em');
+switch (type) {
+  case 'bold':
+  case 'bulk':
+  case 'outline':
+    fill = color;
+    break;
+  case 'broken':
+  case 'linear':
+  case 'twotone':
+    stroke = color;
+    break;
+  default:
+    stroke = color;
+    break;
+}
 
+const toAttributeSize = (size: number) => String(size).replace(/(?<=[0-9])x$/, 'em');
+if (!size) {
+  size = '24px';
+  width = size;
+  height = size;
+}
 size = toAttributeSize(size);
 width = toAttributeSize(width);
 height = toAttributeSize(height);
-svg = '<title>${title}</title>' + styleDictionary[type];
+let svg = '<title>${title}</title>';
+svg += styleDictionary[type] ? styleDictionary[type] : styleDictionary['linear'];
 ---
-<svg set:html={svg} width{width} height={height} {...props}></svg>
+<svg set:html={svg} width={width} height={height} fill={fill} stroke={stroke} {...props}></svg>
 `;
 
 const toInnerSvg = (input) =>

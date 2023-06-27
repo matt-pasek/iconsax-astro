@@ -1,6 +1,6 @@
 {
   "name": "iconsax-astro",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "iconsax icon pack for Astro framework",
   "main": "build.js",
   "type": "module",
