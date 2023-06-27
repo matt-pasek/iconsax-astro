@@ -302,4 +302,5 @@ export interface Props extends HTMLAttributes {
   viewBox?: string;
   width?: number | string;
   type?: 'bold' | 'broken' | 'bulk' | 'linear' | 'outline' | 'twotone';
+  color?: string;
 }

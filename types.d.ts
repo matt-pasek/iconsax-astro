@@ -9,6 +9,7 @@ declare module '*.astro' {
       viewBox?: string;
       width?: number | string;
       type?: string;
+      color?: string;
     }): any;
   };
 }
