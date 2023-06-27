@@ -15,7 +15,7 @@ yarn add iconsax-astro
 
 ## Usage
 
-All the icons are available as components, from single import.
+All the icons are available as components.
 
 ```astro
 ---
@@ -27,18 +27,35 @@ import { Aave, Activity, AlignVertically } from 'iconsax-astro';
 <AlignVertically type="bold" size="50" fill="#101010" />
 ```
 
-```Astro
+You can also import the icons individually...
+
+```astro
 ---
-import AaveIcon from 'iconsax-astro/Aave'
-import ActivityIcon from 'iconsax-astro/Activity'
-import AlignVerticallyIcon from 'iconsax-astro/AlignVertically'
+import AaveIcon from 'iconsax-astro/Aave';
+import ActivityIcon from 'iconsax-astro/Activity';
+import AlignVerticallyIcon from 'iconsax-astro/AlignVertically';
 ---
+
 <AaveIcon type="outline" />
 <ActivityIcon type="linear" />
 <AlignVerticallyIcon type="bold" size="50" fill="#101010" />
 ```
 
-Each icon has a default size of `24px`, a default color of `#000000` and default type `bold`.
+...or all at once, and only the icons that are used will be added to the page.
+
+```astro
+---
+import * as Icon from 'iconsax-astro';
+---
+
+<Icon.Aave type="outline" />
+<Icon.Activity type="linear" />
+<Icon.AlignVertically type="bold" size="50" fill="#101010" />
+```
+
+Each icon has a default size of `24px` and default type `linear`.
+
+## Props
 
 The following `Props` interface is available to every icon:
 
@@ -60,6 +77,7 @@ export interface Props {
   viewBox?: string;
   width?: number | string;
   type?: 'bold' | 'broken' | 'bulk' | 'linear' | 'outline' | 'twotone';
+  color?: string;
 }
 ```
 
@@ -69,6 +87,8 @@ export interface Props {
 - The `title` attribute transforms into a `<title>` element within the `<svg>`.
 - The `size` attribute transforms values like `1.5x` into `1.5em`.
 - The `size` attribute is used as the default values for `width` and `height`.
+- The `color` attribute is used as the default value for `fill` and/or `stroke` (depending on the
+  icon).
 
 ## Available icons
 
