@@ -24,7 +24,7 @@ import { Aave, Activity, AlignVertically } from 'iconsax-astro';
 
 <Aave type="outline" />
 <Activity type="linear" />
-<AlignVertically type="bold" size="50" fill="#101010" />
+<AlignVertically type="bold" size="50" color="#101010" />
 ```
 
 You can also import the icons individually...
@@ -38,7 +38,7 @@ import AlignVerticallyIcon from 'iconsax-astro/AlignVertically';
 
 <AaveIcon type="outline" />
 <ActivityIcon type="linear" />
-<AlignVerticallyIcon type="bold" size="50" fill="#101010" />
+<AlignVerticallyIcon type="bold" size="50" color="#101010" />
 ```
 
 ...or all at once, and only the icons that are used will be added to the page.
@@ -50,7 +50,18 @@ import * as Icon from 'iconsax-astro';
 
 <Icon.Aave type="outline" />
 <Icon.Activity type="linear" />
-<Icon.AlignVertically type="bold" size="50" fill="#101010" />
+<Icon.AlignVertically type="bold" size="50" color="#101010" />
+```
+
+You can also use CSS to style icons (using color="currentColor" and CSS `color` property), example
+using TailwindCSS
+
+```astro
+---
+import { AlignVertically } from 'iconsax-astro';
+---
+
+<AlignVertically type="bold" size="50" color="currentColor" class="text-yellow-300" />
 ```
 
 Each icon has a default size of `24px` and default type `linear`.
